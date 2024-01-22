@@ -2,18 +2,44 @@
 
 {% block content %}
 
-<h1>Signin</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-8 mt-5">
 
-<p>
-{{error}}
-</p>
+      <form action="/signin/" method="POST" class="card card-body text-center">
+      <h1>Signin</h1>
 
-<form action="/signin/" method="POST">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button>
-    Signin
-  </button>
-</form>
+      {{error}}
+  
 
+        {% csrf_token %} 
+        
+        <style>
+          .center-placeholder::placeholder {
+            text-align: center;
+          }
+        </style>
+
+        <div class="mb-3">
+
+          <input type="text" name="username" id="nombre"class="form-control text-center center-placeholder"
+          placeholder="Nombre completo">
+        </div>
+
+        <div class="mb-3">
+
+          <input type="password" name="password" id="password"class="form-control text-center center-placeholder"
+          placeholder="Contraseña">
+        </div>
+
+
+        <!--{{form}}-->
+        <button class="btn btn-primary">
+          Signin
+        </button>
+      </form>
+    </div>
+  </div>
+   
+</div>
 {% endblock %}
