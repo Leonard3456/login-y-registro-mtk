@@ -1,7 +1,21 @@
 {% extends 'base.html' %} {% block content %} <!--lo que hace es que el contenido que se tiene se mande a base-->
 
 <div class="container">
-  <h1>Home</h1>
+  <main class="container py-5">
+    <section class="card card-body">
+      <h1>Home</h1> 
+        <div>
+          <a class="btn btn-secondary" href="/signin/">
+              signin
+          </a>
+          <a class="btn btn-primary" href="/signup/">
+              signup
+          </a>
+        </div>
+    </section>
+  </main>
+ 
 </div>
+
 
 {% endblock %}
