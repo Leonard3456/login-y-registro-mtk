@@ -42,3 +42,53 @@
 
 
 
+
+
+
+
+
+
+<div class="col-md-4 offset-md-4   mt-3">
+    <h1 class="text-white col-12 text-center mi-div">Editar Tarea</h1>
+    
+    <label for="title" class="text-white">Titulo:</label>
+
+    <div class="mb-3">
+      <input type="title" name="title" id="title"class="form-control text-center center-placeholder"
+      placeholder="Titulo">
+    </div>
+
+    <label for="description" class="text-white">Descripción:</label>
+
+    <div class="mb-3">
+      <textarea name="description" id="description" class="form-control text-center center-placeholder" placeholder="Descripción"></textarea>
+    </div>
+
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label text-white" for="flexCheckDefault">
+        Importante
+      </label>
+    </div>
+      
+    <form method="POST">
+      {% csrf_token %} <!--se utiliza para proteger formularios contra ataques CSRF al incluir un token de seguridad en ellos.-->
+      <button class="col-md-4 offset-md-4 mt-4 col-12 text-center">
+        Update  <!--Para cambiar la tarea-->
+      </button>
+    </form>
+
+    <form action="{% url 'complete_task' task.id %}" class="col-md-4 offset-md-4 mt-4 col-12 text-center" method="POST">
+      {% csrf_token %}
+      <button>
+        complete
+      </button>
+    </form>
+
+    <form action="{% url 'delete_task' task.id %}" class="col-md-4 offset-md-4 mt-4 col-12 text-center" method="POST">
+      {% csrf_token %}
+      <button>
+        delete
+      </button>
+    </form>
+  </div>
