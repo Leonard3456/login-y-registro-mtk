@@ -3,15 +3,24 @@
 {% block content %}
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 offset-md-8 mt-5">
-
-      <form action="/signin/" method="POST" class="card card-body text-center">
-      <h1>Signin</h1>
-
-      {{error}}
+  <div class="row align-items-center justify-content-center vh-100">
   
-
+    <!-- Bloque a la izquierda -->
+    <div class="col-md-4 ms-15">
+      <div class="text-white p-3">
+        <h3 class="display-16">Best Technology</h3>
+        <h1 class="display-1">  MerakT</h1>
+        <button class="btn btn-lg custom-btn">
+          Somos Avance
+        </button>
+      </div>
+    </div>
+    
+    <!-- Bloque a la derecha -->
+    <div class="col-md-4 offset-md-4 mt-5">
+      <form action="/signin/" method="POST" class="card card-body text-center">
+        <h1>Signin</h1>
+        {{error}}
         {% csrf_token %} 
         
         <style>
@@ -21,17 +30,12 @@
         </style>
 
         <div class="mb-3">
-
-          <input type="text" name="username" id="nombre"class="form-control text-center center-placeholder"
-          placeholder="Nombre completo">
+          <input type="text" name="username" id="nombre" class="form-control text-center center-placeholder" placeholder="Nombre completo">
         </div>
 
         <div class="mb-3">
-
-          <input type="password" name="password" id="password"class="form-control text-center center-placeholder"
-          placeholder="Contraseña">
+          <input type="password" name="password" id="password" class="form-control text-center center-placeholder" placeholder="Contraseña">
         </div>
-
 
         <!--{{form}}-->
         <button class="btn btn-primary">
@@ -40,6 +44,14 @@
       </form>
     </div>
   </div>
-   
 </div>
+
+<style>
+  .custom-btn {
+    background-color: #5600e0; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    transition: all 0.3s ease-in-out; /* Agrega una transición suave a todos los estilos que cambien */
+  }
+</style>
+
 {% endblock %}

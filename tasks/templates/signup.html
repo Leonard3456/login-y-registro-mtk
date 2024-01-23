@@ -1,16 +1,34 @@
 {% extends 'base.html' %} 
-{% block content %} <!--Todos tienen la posibilidad de que se sobreponga un archivo-->
+{% block content %}
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 offset-md-8 mt-5">
-
-      <form action="/signup/" method="POST" class="card card-body text-center">
-      <h1>Signup</h1>
-
-      {{error}}
+  <div class="row vh-100 align-items-center justify-content-center">
   
+    <!-- Primer bloque a la izquierda sin espacio superior -->
+    <div class="col-md-4 ms-15">
+      <div class="text-white p-3">
+        <h3 class="display-16">Best Technology</h3>
+        <h1 class="display-1">  MerakT</h1>
+        <button class="btn btn-lg custom-btn">
+          Somos Avance
+        </button>
+      </div>
+    </div>
+    
+    <style>
+      .custom-btn {
+        background-color: #5600e0; /* Color de fondo */
+        color: #fff; /* Color del texto */
+        transition: all 0.3s ease-in-out; /* Agrega una transición suave a todos los estilos que cambien */
+      }
+    </style>
 
+
+    <!-- Segundo bloque a la derecha -->
+    <div class="col-md-4 mt-5">
+      <form action="/signup/" method="POST" class="card card-body text-center">
+        <h1>Signup</h1>
+        {{error}}
         {% csrf_token %} 
         
         <style>
@@ -18,43 +36,26 @@
             text-align: center;
           }
         </style>
-
-
-
-      <!--<div class="mb-3"> 
-          <input type="text" name="email" id="email" class="form-control text-center center-placeholder"
-          placeholder="Email">
-        </div>-->  
         
         <div class="mb-3">
-
-          <input type="text" name="username" id="nombre"class="form-control text-center center-placeholder"
-          placeholder="Nombre completo">
+          <input type="text" name="username" id="nombre" class="form-control text-center center-placeholder" placeholder="Nombre completo">
         </div>
 
         <div class="mb-3">
-
-          <input type="password" name="password1" id="password1"class="form-control text-center center-placeholder"
-          placeholder="Contraseña">
+          <input type="password" name="password1" id="password1" class="form-control text-center center-placeholder" placeholder="Contraseña">
         </div>
 
         <div class="mb-3">
-
-          <input type="password" name="password2" id="password2"class="form-control text-center center-placeholder"
-          placeholder="Confirmar contraseña">
+          <input type="password" name="password2" id="password2" class="form-control text-center center-placeholder" placeholder="Confirmar contraseña">
         </div>
 
-
-
-
-
-        <!--{{form}}-->
         <button class="btn btn-primary">
           Signup
         </button>
       </form>
     </div>
+    
   </div>
-   
 </div>
+
 {% endblock %}
