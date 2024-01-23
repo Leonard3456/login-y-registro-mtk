@@ -5,12 +5,16 @@
     <section class="card card-body">
       <h1 class="col-md-4 offset-md-5 mt-4">Home</h1> 
         <div class="d-flex">
+          {% if user.is_authenticated %}
+
+          {% else %}
           <a class="btn btn-secondary col-md-4 offset-md-1 mt-4 " href="/signin/">
               Iniciar sesión
           </a>
           <a class="btn btn-primary col-md-4 offset-md-1 mt-4" href="/signup/">
               Registrarse
           </a>
+          {% endif %}
         </div>
     </section>
   </main>
