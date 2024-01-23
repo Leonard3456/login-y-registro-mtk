@@ -2,8 +2,8 @@
 
 {% block content %}
 <!--offset es para donde se ubica el texto-->+
-<div class="mt-6"> 
-<h1 class="text-white col-md-4 offset-md-3 mt-4">Crear Tareas</h1>
+<div class="mt-6 "> 
+<h1 class="text-white col-md-4 offset-md-4 mt-4 col-12 text-center">Crear Tareas</h1>
 
 
   {{error}}
@@ -11,7 +11,7 @@
     {% csrf_token %} <!--colocar un input para proteger los sitios-->
     <!--{{form}}-->
 
-    <div class="col-md-4 offset-md-2 mt-3">
+    <div class="col-md-4 offset-md-4 mt-3">
 
       <label for="title" class="text-white">Titulo:</label>
 
@@ -32,10 +32,12 @@
           Importante
         </label>
       </div>
+
+      <button class="col-md-4 offset-md-3 mt-4">Save</button>
     </div>
     
     
-    <button>Save</button>
+    
   </form>
 </div>
 
