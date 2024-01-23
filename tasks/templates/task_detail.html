@@ -3,7 +3,7 @@
 {% block content %}
 <main class="container">
   <div class="row">
-    <div class="cold-md-4 offset-md-4 mt-5">
+    <div class="cold-md-4 offset-md-4">
       <h1 class="text-white">Editar Tarea</h1>
     </div>
     <!--{{task.title}}-->
@@ -15,14 +15,16 @@
         {{form.as_p}}
         <div class="cold-md-4 offset-md-4">
           <button>
-            Update  <!--Para cambiar la tarea-->
+            Update
           </button>
         </div>
+        
+    
     <!-- -->
       </form>
 
       
-      <div class="cold-md-4 offset-md-4 ">
+      <div class="cold-md-4 offset-md-4">
         <form action="{% url 'complete_task' task.id %}" method="POST">
           {% csrf_token %}
           <button>
