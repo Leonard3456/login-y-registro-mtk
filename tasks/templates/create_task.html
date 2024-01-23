@@ -1,14 +1,42 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!--offset es para donde se ubica el texto-->+
+<div class="mt-6"> 
+<h1 class="text-white col-md-4 offset-md-3 mt-4">Crear Tareas</h1>
 
-<h1>CReate task</h1>
 
-{{error}}
-<form action="/create_task/" method="POST"> <!--envia a crear tarea-->
-  {% csrf_token %} <!--colocar un input para proteger los sitios-->
-  {{form}}
+  {{error}}
+  <form action="/create_task/" method="POST"> <!--envia a crear tarea-->
+    {% csrf_token %} <!--colocar un input para proteger los sitios-->
+    <!--{{form}}-->
 
-  <button>Save</button>
-</form>
+    <div class="col-md-4 offset-md-2 mt-3">
+
+      <label for="title" class="text-white">Titulo:</label>
+
+      <div class="mb-3">
+        <input type="title" name="title" id="title"class="form-control text-center center-placeholder"
+        placeholder="Titulo">
+      </div>
+  
+      <label for="description" class="text-white">Descripción:</label>
+
+      <div class="mb-3">
+        <textarea name="description" id="description" class="form-control text-center center-placeholder" placeholder="Descripción"></textarea>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label text-white" for="flexCheckDefault">
+          Importante
+        </label>
+      </div>
+    </div>
+    
+    
+    <button>Save</button>
+  </form>
+</div>
+
 {% endblock %}
