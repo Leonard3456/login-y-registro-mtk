@@ -27,7 +27,7 @@
     <!-- Segundo bloque a la derecha -->
     <div class="col-md-4 mt-5">
       <form action="/signup/" method="POST" class="card card-body text-center">
-        <h1>Signup</h1>
+        <h1>Registrarse</h1>
         {{error}}
         {% csrf_token %} 
         
@@ -50,10 +50,15 @@
         </div>
 
         <button class="btn btn-primary">
-          Signup
+          Registrar Usuario
         </button>
+        <a href="/signin/" class="text-decoration-none mt-2">¿Ya tienes cuenta? Iniciar sesión aquí</a>
       </form>
     </div>
+    
+
+
+
     
   </div>
 </div>
